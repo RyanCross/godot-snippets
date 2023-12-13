@@ -1,0 +1,154 @@
+[gd_scene load_steps=11 format=3 uid="uid://bgnhuthgmq41w"]
+
+[ext_resource type="Script" path="res://optionsMenu/Scripts/options.gd" id="1_fsato"]
+[ext_resource type="Texture2D" uid="uid://cyl5ou74o5epx" path="res://optionsMenu/Images/UI board Large  stone.png" id="2_rxxu8"]
+[ext_resource type="Texture2D" uid="uid://y0u768d3d1ja" path="res://optionsMenu/Images/UI board Large  parchment.png" id="3_kpw2x"]
+[ext_resource type="Texture2D" uid="uid://cdimxm8almcha" path="res://optionsMenu/Images/IRONY TITLE  Large.png" id="5_dv0d8"]
+[ext_resource type="FontFile" uid="uid://b7r0m4wv7n1s2" path="res://optionsMenu/Fonts/buddychampion.ttf" id="6_a6yu7"]
+[ext_resource type="FontFile" uid="uid://cs63ql10bief" path="res://optionsMenu/Fonts/buddychampionrotate.ttf" id="6_d2he0"]
+[ext_resource type="AudioStream" uid="uid://cdg5gyvig02ke" path="res://optionsMenu/Sounds/Music/Holiday Weasel.mp3" id="7_ehgtd"]
+[ext_resource type="Script" path="res://optionsMenu/Scripts/optionSlider.gd" id="8_mq1av"]
+[ext_resource type="PackedScene" uid="uid://bo4c1ujsu7hqv" path="res://optionsMenu/Scenes/oinker.tscn" id="9_p368a"]
+[ext_resource type="PackedScene" uid="uid://c1l88v70ir6ui" path="res://optionsMenu/Scenes/big_button.tscn" id="10_hi1ui"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fsato")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(2.08667, 1.74313)
+texture = ExtResource("2_rxxu8")
+centered = false
+
+[node name="PaperControl" type="Control" parent="Background"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Background/PaperControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Paper" type="Sprite2D" parent="Background/PaperControl/MarginContainer"]
+position = Vector2(29.7224, 27.6169)
+texture = ExtResource("3_kpw2x")
+centered = false
+
+[node name="TitleBackground" type="Sprite2D" parent="."]
+position = Vector2(948, 270)
+scale = Vector2(2.32569, 2.32569)
+texture = ExtResource("5_dv0d8")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.214695
+anchor_top = 0.157209
+anchor_right = 0.772798
+anchor_bottom = 0.351628
+theme_override_fonts/font = ExtResource("6_d2he0")
+theme_override_font_sizes/font_size = 192
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.255341
+anchor_top = 0.387907
+anchor_right = 0.752475
+anchor_bottom = 0.715349
+offset_left = 3.05176e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="Option1" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="VBoxContainer/Option1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_a6yu7")
+theme_override_font_sizes/font_size = 124
+text = "Effects
+"
+horizontal_alignment = 1
+
+[node name="sfxSlider" type="HSlider" parent="VBoxContainer/Option1"]
+custom_minimum_size = Vector2(500, 125)
+layout_mode = 2
+size_flags_horizontal = 10
+min_value = -15.0
+max_value = 6.0
+step = 0.1
+script = ExtResource("8_mq1av")
+metadata/target_bus = "SFX"
+
+[node name="Option2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="VBoxContainer/Option2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_a6yu7")
+theme_override_font_sizes/font_size = 124
+text = "Music"
+horizontal_alignment = 1
+
+[node name="musicSlider" type="HSlider" parent="VBoxContainer/Option2"]
+custom_minimum_size = Vector2(500, 125)
+layout_mode = 2
+size_flags_horizontal = 10
+min_value = -15.0
+max_value = 6.0
+step = 0.1
+script = ExtResource("8_mq1av")
+metadata/target_bus = "Music"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_ehgtd")
+autoplay = true
+bus = &"Music"
+
+[node name="oinker" parent="." instance=ExtResource("9_p368a")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.404377
+anchor_top = 0.706047
+anchor_right = 0.580511
+anchor_bottom = 0.810233
+offset_bottom = -6.10352e-05
+alignment = 1
+script = ExtResource("1_fsato")
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" parent="HBoxContainer" instance=ExtResource("10_hi1ui")]
+layout_mode = 2
+text = "Back"
+metadata/destination_scene = "res://Scenes/main_menu.tscn"
+
+[connection signal="value_changed" from="VBoxContainer/Option1/sfxSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Option2/musicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="pressed" from="HBoxContainer/Back" to="." method="_on_back_pressed"]

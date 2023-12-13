@@ -1,0 +1,36 @@
+[gd_scene load_steps=11 format=3 uid="uid://bo4c1ujsu7hqv"]
+
+[ext_resource type="AudioStream" uid="uid://bn1tn2a2e7jdv" path="res://optionsMenu/Sounds/SFX/oink1.wav" id="1_ql0y2"]
+[ext_resource type="AudioStream" uid="uid://bt7suxliafnwu" path="res://optionsMenu/Sounds/SFX/oink2.wav" id="2_uocku"]
+[ext_resource type="AudioStream" uid="uid://05qki6htr1km" path="res://optionsMenu/Sounds/SFX/oink3.wav" id="3_hj26d"]
+[ext_resource type="AudioStream" uid="uid://dbhfggxb3plcw" path="res://optionsMenu/Sounds/SFX/oink4.wav" id="4_5x0el"]
+[ext_resource type="AudioStream" uid="uid://cyomk1bwwj21b" path="res://optionsMenu/Sounds/SFX/oink5.wav" id="5_vvq6k"]
+[ext_resource type="AudioStream" uid="uid://dkp2johb8vcnc" path="res://optionsMenu/Sounds/SFX/oink6.wav" id="6_sxu1y"]
+[ext_resource type="AudioStream" uid="uid://bjgrhwxbgopqr" path="res://optionsMenu/Sounds/SFX/oink7.wav" id="7_khyvo"]
+[ext_resource type="AudioStream" uid="uid://dvw66ibj15d40" path="res://optionsMenu/Sounds/SFX/oink8.wav" id="8_ygl84"]
+[ext_resource type="AudioStream" uid="uid://biln2w7msr8jr" path="res://optionsMenu/Sounds/SFX/oink9.wav" id="9_pmeis"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_61seb"]
+streams_count = 9
+stream_0/stream = ExtResource("1_ql0y2")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_uocku")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("3_hj26d")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("4_5x0el")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("5_vvq6k")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("6_sxu1y")
+stream_5/weight = 1.0
+stream_6/stream = ExtResource("7_khyvo")
+stream_6/weight = 1.0
+stream_7/stream = ExtResource("8_ygl84")
+stream_7/weight = 1.0
+stream_8/stream = ExtResource("9_pmeis")
+stream_8/weight = 1.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = SubResource("AudioStreamRandomizer_61seb")
+bus = &"SFX"

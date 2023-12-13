@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1l88v70ir6ui"]
+
+[ext_resource type="Texture2D" uid="uid://v0nsl7h20c4t" path="res://optionsMenu/Images/TextBTN_Big.png" id="2_pkvoe"]
+[ext_resource type="Texture2D" uid="uid://doeobnkgxlgls" path="res://optionsMenu/Images/ModButton.png" id="3_x4tgo"]
+[ext_resource type="Script" path="res://optionsMenu/Scripts/big_button.gd" id="4_n4j4n"]
+[ext_resource type="FontFile" uid="uid://b7r0m4wv7n1s2" path="res://optionsMenu/Fonts/buddychampion.ttf" id="5_5g5vx"]
+[ext_resource type="PackedScene" uid="uid://bo4c1ujsu7hqv" path="res://optionsMenu/Scenes/oinker.tscn" id="6_x44vu"]
+
+[node name="big_button" type="TextureButton"]
+offset_right = 338.0
+offset_bottom = 112.0
+keep_pressed_outside = true
+texture_normal = ExtResource("2_pkvoe")
+texture_pressed = ExtResource("2_pkvoe")
+texture_hover = ExtResource("3_x4tgo")
+script = ExtResource("4_n4j4n")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_5g5vx")
+theme_override_font_sizes/font_size = 54
+text = "TEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("6_x44vu")]
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

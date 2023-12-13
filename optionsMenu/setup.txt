@@ -1,0 +1,12 @@
+1. Load Audio Buses from default_bus_layout.tres
+
+2. Ensure AudioStreams have their destination buses set correctly, this may get lost when copy pasting, but if you load default bus before Copy pasting it may work.
+
+2. Set a destination scene for Back Node
+
+3. Set Required Project Settings
+
+Window
+Default Resolution: 1920 x 1080
+Stretch: Viewport
+Aspect Ratio: Ignore

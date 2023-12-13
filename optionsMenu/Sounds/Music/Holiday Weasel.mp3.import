@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cdg5gyvig02ke"
+path="res://.godot/imported/Holiday Weasel.mp3-54fdb9ec595a8a9d16f7070b23a192c7.mp3str"
+
+[deps]
+
+source_file="res://optionsMenu/Sounds/Music/Holiday Weasel.mp3"
+dest_files=["res://.godot/imported/Holiday Weasel.mp3-54fdb9ec595a8a9d16f7070b23a192c7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
