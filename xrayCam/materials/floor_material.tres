@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dkd1h6wg0w484"]
+
+[ext_resource type="Texture2D" uid="uid://bvr8upqu8uocf" path="res://Packages/rpg shader camera/assets/textures/Dark/texture_05.png" id="1_hocbq"]
+
+[resource]
+albedo_texture = ExtResource("1_hocbq")
+uv1_triplanar = true

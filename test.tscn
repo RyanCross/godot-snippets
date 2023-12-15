@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://drx3y08sk0yuk"]
+
+[ext_resource type="PackedScene" uid="uid://2f4fewc7a6bc" path="res://basicEnvironment/basicEnvironment.tscn" id="1_uhm1w"]
+[ext_resource type="PackedScene" uid="uid://c6cs8jljfydk6" path="res://tinyHeroPlayer/player.tscn" id="2_bla0j"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="BasicEnvironment" parent="." instance=ExtResource("1_uhm1w")]
+
+[node name="player" parent="." instance=ExtResource("2_bla0j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
