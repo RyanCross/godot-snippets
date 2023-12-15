@@ -4,6 +4,9 @@ extends CharacterBody3D
 @onready var visuals = $visuals
 @onready var animation_player = $visuals/TinyHero/AnimationPlayer
 
+#Character inputs needed 
+#(move_forward, move_back, move_right, move_left, atk, run)
+
 var SPEED = 3
 const JUMP_VELOCITY = 4.5
 
