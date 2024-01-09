@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://2qm6b4y7ddep"]
 
-[ext_resource type="Texture2D" uid="uid://bxc0naajihbld" path="res://textures/grids/Dark/texture_01.png" id="1_al6vo"]
+[ext_resource type="Texture2D" uid="uid://c2oarpcqlsp5k" path="res://basicCarScene/textures/greyGrid.png" id="1_hwr2c"]
 [ext_resource type="Script" path="res://basicCarScene/car.gd" id="2_1rwhx"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6cikq"]
-albedo_texture = ExtResource("1_al6vo")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_evp8o"]
+albedo_texture = ExtResource("1_hwr2c")
 
 [sub_resource type="BoxMesh" id="BoxMesh_d3eiv"]
 
@@ -25,7 +25,7 @@ radial_segments = 12
 
 [node name="floor" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-material_override = SubResource("StandardMaterial3D_6cikq")
+material_override = SubResource("StandardMaterial3D_evp8o")
 use_collision = true
 size = Vector3(100, 1, 100)
 
